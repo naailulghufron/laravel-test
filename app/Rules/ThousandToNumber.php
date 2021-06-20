@@ -25,10 +25,9 @@ class ThousandToNumber implements Rule
      */
     public function passes($attribute, $value)
     {
-        if (is_numeric($value)) {
+        $amount = str_replace(",", "", $value);
+        if (is_numeric($amount)) {
             return true;
-        } else {
-            return false;
         }
     }
 
@@ -39,6 +38,6 @@ class ThousandToNumber implements Rule
      */
     public function message()
     {
-        return 'The validation error message.';
+        return 'The input must be a number.';
     }
 }
