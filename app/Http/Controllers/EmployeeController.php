@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreEmployeeRequest;
+use App\Http\Requests\EmployeeStoreRequest;
 use App\Models\employee;
 use Illuminate\Http\Request;
 
@@ -34,7 +34,7 @@ class EmployeeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreEmployeeRequest $request)
+    public function store(EmployeeStoreRequest $request)
     {
         employee::create([
             'nik' => $request->nik,
